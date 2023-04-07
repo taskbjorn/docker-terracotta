@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: build
+    container_name: terracotta
+    image: taskbjorn/terracotta:main
+    ports:
+      - 5100:5100
+    restart: unless-stopped
+    volumes:
+      - ./rasters:/terracotta/rasters
